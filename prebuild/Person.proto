@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package PersonProto;
+
+enum PhoneType {
+  MOBILE = 0;
+  HOME = 1;
+  WORK = 2;
+}
+
+message PhoneNumber {
+  required string number = 1;
+  optional PhoneType type = 2;
+}
+
+message Address {
+  optional string country = 1;
+  optional string detail = 2;
+}
+
+message Person {
+  required int32 id =1;
+  required string name = 2;
+  optional int32 age = 3;
+  repeated string email = 4;
+  repeated PhoneNumber phone = 5;
+  optional Address address = 6;
+}

@@ -43,6 +43,7 @@ if __name__ == "__main__":
 
   reader = PersonRead.GeneralProtoReader(protofile, GeneralProto.Person)
   version_read = reader.getVersion()
+  frame_count = reader.getFrameCount()
 
   reader.setFrameIndex(0)
   print(reader.getFrameData_general("id"))

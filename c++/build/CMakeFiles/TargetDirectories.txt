@@ -1,0 +1,6 @@
+/home/yngzmiao/github/protobuf-parser-tool/c++/build/CMakeFiles/edit_cache.dir
+/home/yngzmiao/github/protobuf-parser-tool/c++/build/CMakeFiles/rebuild_cache.dir
+/home/yngzmiao/github/protobuf-parser-tool/c++/build/CMakeFiles/example_person.dir
+/home/yngzmiao/github/protobuf-parser-tool/c++/build/proto_pb2/CMakeFiles/rebuild_cache.dir
+/home/yngzmiao/github/protobuf-parser-tool/c++/build/proto_pb2/CMakeFiles/edit_cache.dir
+/home/yngzmiao/github/protobuf-parser-tool/c++/build/proto_pb2/CMakeFiles/general_pb2.dir

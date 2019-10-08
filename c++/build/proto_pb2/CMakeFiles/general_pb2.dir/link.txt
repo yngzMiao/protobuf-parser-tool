@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgeneral_pb2.a  CMakeFiles/general_pb2.dir/Person.pb.cc.o
+/usr/bin/ranlib libgeneral_pb2.a

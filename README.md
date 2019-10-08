@@ -12,9 +12,18 @@ bash make.sh
 ```
 注意：需要修改`make.sh`的内容，指定`proto`文件
 
-2. 依照`example_person.py`进行`proto`文件写入和解析。
+2. python版本，依照`example_person.py`进行`proto`文件写入和解析。
 ```
+cd python
 python example_person.py
+```
+c++版本，先生成可执行文件，在进行验证。
+```
+cd c++
+mkdir build && cd build
+cmake ..
+make
+./example_person
 ```
 
 protobuf是Google开源的一个跨平台的结构化数据存储格式。可用于通讯协议、数据存储等领域的语言无关、平台无关、可扩展的序列化结构数据格式。

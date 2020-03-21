@@ -17,3 +17,6 @@ add_executable(${PROJECT_NAME} example_person.cpp )
 
 target_link_libraries(${PROJECT_NAME}
     general_pb2)
+
+install(TARGETS ${PROJECT_NAME}
+  RUNTIME DESTINATION ${PROJECT_SOURCE_DIR})

@@ -54,5 +54,8 @@ int main(int argc, char const *argv[])
   reader.read(person);
   person->PrintDebugString();
 
+  delete person1;
+  delete person;
+
   return 0;
 }

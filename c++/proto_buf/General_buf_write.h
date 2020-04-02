@@ -10,8 +10,8 @@ namespace GeneralBuf {
 template <typename T>
 class GeneralProtoWriter {
   public:
-    int startWriter(std::string &filename, int64_t version = VERSION);
-    int write(T *t);
+    int startWriter(const std::string &filename, const int64_t version = VERSION);
+    int write(T* t);
     void stopWriter();
   private:
     std::string mFileName;
@@ -19,7 +19,7 @@ class GeneralProtoWriter {
 };
 
 template <typename T>
-int GeneralProtoWriter<T>::startWriter(std::string &filename, int64_t version) {
+int GeneralProtoWriter<T>::startWriter(const std::string &filename, const int64_t version) {
   mFileName = filename;
   mOfs.open(mFileName.c_str(), std::ofstream::binary);
   
@@ -36,7 +36,7 @@ int GeneralProtoWriter<T>::startWriter(std::string &filename, int64_t version) {
 }
 
 template <typename T>
-int GeneralProtoWriter<T>::write(T *t) {
+int GeneralProtoWriter<T>::write(T* t) {
   if(!mOfs.is_open() || t == nullptr)
     return -1;
   

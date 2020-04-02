@@ -15,15 +15,15 @@ class GeneralProtoReader {
   } ProtoInfo_t;
 
   public:
-    int startReader(std::string &filename);
-    int read(T *t);
-    uint32_t getVersion() { return version; }
-    int setFrameIndex(int pos);
-    int getFrameCount();
+    int startReader(const std::string& filename);
+    int read(T* t);
+    uint32_t getVersion() const { return version; }
+    int setFrameIndex(const int pos);
+    int getFrameCount() const { return mProtoInfoVec.size(); };
     void stopReader();
 
   private:
-    size_t GetFileSize(std::ifstream &ifs);
+    size_t GetFileSize(std::ifstream& ifs);
     std::string mFileName;
     std::ifstream mIfs;
     std::vector<char> mProtoBufVec;
@@ -33,7 +33,7 @@ class GeneralProtoReader {
 };
 
 template <typename T>
-int GeneralProtoReader<T>::startReader(std::string &filename){
+int GeneralProtoReader<T>::startReader(const std::string& filename){
   mFileName = filename;
   mInput_cnt = 0;
 
@@ -80,7 +80,7 @@ int GeneralProtoReader<T>::startReader(std::string &filename){
 }
 
 template <typename T>
-size_t GeneralProtoReader<T>::GetFileSize(std::ifstream &ifs) {
+size_t GeneralProtoReader<T>::GetFileSize(std::ifstream& ifs) {
   size_t cur_pos = ifs.tellg();
   ifs.seekg(0, ifs.end);
   size_t size = ifs.tellg();
@@ -89,7 +89,7 @@ size_t GeneralProtoReader<T>::GetFileSize(std::ifstream &ifs) {
 }
 
 template <typename T>
-int GeneralProtoReader<T>::read(T *t) {
+int GeneralProtoReader<T>::read(T* t) {
   if (mInput_cnt < 0 || mInput_cnt >= mProtoInfoVec.size())
     return -1;
 
@@ -104,14 +104,9 @@ int GeneralProtoReader<T>::read(T *t) {
 }
 
 template <typename T>
-int GeneralProtoReader<T>::setFrameIndex(int pos) {
+int GeneralProtoReader<T>::setFrameIndex(const int pos) {
   mInput_cnt = pos;
   return 0;
-}
-
-template <typename T>
-int GeneralProtoReader<T>::getFrameCount(void) {
-  return mProtoInfoVec.size();
 }
 
 template <typename T>
